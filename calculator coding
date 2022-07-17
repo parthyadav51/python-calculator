@@ -1,0 +1,50 @@
+from time import sleep
+
+def sum(x,y):
+    return x+y
+def mul(x,y):
+    return x*y
+def sub(x,y):
+    return x-y
+def div(x,y):
+    return x%y
+
+def call():
+    print('click the choices that you want to do!')
+    print('1-addition')
+    print('2-multiplication')
+    print('3-subtraction')
+    print('4-division')
+    sel = input('select 1/2/3/4-')
+
+    if sel in ('1','2','3','4'):
+        a = float(input('enter first number-'))
+        b = float(input('enter second number-'))
+
+        if sel == '1':
+            print('the sum of',a,'+',b,'is' ,sum(a,b))
+
+        elif sel == '2':
+            print('the multiplication of',a,'*',b,'is',mul(a,b))
+
+        elif sel =='3':
+             print('the subtraction of',a,'-',b,'is',sub(a,b))
+
+        elif sel == '4':
+            print('the division of',a,'%',b,'is',div(a,b))
+
+        else:
+            print('error occured!!')
+            sleep(4)
+            print(call())
+    else:
+        print('error!!!')
+
+    reselect = input('do you want to do calculation again?yes/no-')
+    if reselect == 'yes':
+        print(call())
+    else:
+        print('thanks for running the programe')
+
+print(call())
+
